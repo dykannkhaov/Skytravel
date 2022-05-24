@@ -1,7 +1,13 @@
-import * as React from 'react'
+import Header from './components/Header'
+import Main from './components/Main'
 
 function App() {
-  return <h1 className=" border-black bg-black p-8 pl-2 pr-2 font-bold text-red-900">lol</h1>
+  return (
+    <>
+      <Header />
+      <Main />
+    </>
+  )
 }
 
 export default App

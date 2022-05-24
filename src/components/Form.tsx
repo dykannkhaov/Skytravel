@@ -1,7 +1,8 @@
 function Form() {
   return (
-    <div className="rounded-lg bg-sky-900 p-3">
-      <form action="#" className="form-flight">
+    <section className="main-img--container flex flex-col items-center justify-center rounded-md">
+      <p className="text-4xl font-bold tracking-widest text-white">Wherever you are, travel with us!</p>
+      <form action="#" className="rounded-lg bg-sky-900 p-3">
         <div>
           <input className="mr-1 cursor-pointer" type="radio" name="ticket" id="return" defaultChecked />
           <label className="mr-3 cursor-pointer text-white" htmlFor="return">
@@ -72,7 +73,7 @@ function Form() {
           </button>
         </div>
       </form>
-    </div>
+    </section>
   )
 }
 

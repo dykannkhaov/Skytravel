@@ -1,3 +1,8 @@
+import * as React from 'react'
+import { airports } from '../items/AirportsList'
+
+const todayDate = new Date().toISOString().split('T')[0]
+
 function Form() {
   return (
     <section className="main-img--container flex flex-col items-center justify-center rounded-md">
@@ -19,11 +24,19 @@ function Form() {
             From
             <div>
               <input
+                required
                 className="rounded-l-md border-r p-3 text-black"
                 type="text"
-                placeholder="Country, city or airport"
+                placeholder="City"
                 id="departure"
+                list="airports"
               />
+
+              <datalist id="airports">
+                {airports.map((airport) => (
+                  <option key={airport.id} value={airport.name}></option>
+                ))}
+              </datalist>
             </div>
           </label>
 
@@ -31,31 +44,50 @@ function Form() {
             To
             <div>
               <input
+                required
                 className="border-r p-3 text-black"
                 type="text"
-                placeholder="Country, city or airport"
+                placeholder="City"
                 id="arrival"
+                list="airports"
               />
+              <datalist id="airports">
+                {airports.map((airport) => (
+                  <option key={airport.id} value={airport.name}></option>
+                ))}
+              </datalist>
             </div>
           </label>
 
           <label className="text-white" htmlFor="check-in">
             Check-in
             <div>
-              <input className="h-12 cursor-pointer border-r p-3 text-black" type="date" id="check-in" />
+              <input
+                className="h-12 cursor-pointer border-r p-3 text-black"
+                type="date"
+                id="check-in"
+                min={todayDate}
+                required
+              />
             </div>
           </label>
           <label className="text-white" htmlFor="check-out">
             Check-out
             <div>
-              <input className="h-12 cursor-pointer border-r p-3 text-black" type="date" id="check-out" />
+              <input
+                className="h-12 cursor-pointer border-r p-3 text-black"
+                type="date"
+                id="check-out"
+                min={todayDate}
+                required
+              />
             </div>
           </label>
 
           <label className="text-white" htmlFor="guest">
             Guests
             <div>
-              <input className="rounded-r-md p-3 text-black" type="text" id="guest" />
+              <input className="rounded-r-md p-3 text-black" type="text" id="guest" required />
             </div>
           </label>
         </div>

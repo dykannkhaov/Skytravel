@@ -1,9 +1,15 @@
-import * as React from 'react'
+import { useState } from 'react'
 import { airports } from '../items/AirportsList'
+import Calendar from 'react-calendar'
+import '../styles/calendar.css'
 
-const todayDate = new Date().toISOString().split('T')[0]
+const todayDate = new Date()
+const nextYearDate = new Date()
+nextYearDate.setFullYear(nextYearDate.getFullYear() + 1)
 
 function Form() {
+  const [isClicked, setIsClicked] = useState(false)
+
   return (
     <section className="main-img--container flex flex-col items-center justify-center rounded-md">
       <p className="text-4xl font-bold tracking-widest text-white">Wherever you are, travel with us!</p>
@@ -27,7 +33,7 @@ function Form() {
                 required
                 className="rounded-l-md border-r p-3 text-black"
                 type="text"
-                placeholder="City"
+                placeholder="City or airport"
                 id="departure"
                 list="airports"
               />
@@ -47,7 +53,7 @@ function Form() {
                 required
                 className="border-r p-3 text-black"
                 type="text"
-                placeholder="City"
+                placeholder="City or airport"
                 id="arrival"
                 list="airports"
               />
@@ -61,14 +67,15 @@ function Form() {
 
           <label className="text-white" htmlFor="check-in">
             Check-in
-            <div>
+            <div className="">
               <input
                 className="h-12 cursor-pointer border-r p-3 text-black"
-                type="date"
+                // type="date"
                 id="check-in"
-                min={todayDate}
+                onClick={() => setIsClicked(!isClicked)}
                 required
               />
+              {isClicked ? <Calendar className="calendar" minDate={todayDate} maxDate={nextYearDate} /> : null}
             </div>
           </label>
           <label className="text-white" htmlFor="check-out">
@@ -76,9 +83,9 @@ function Form() {
             <div>
               <input
                 className="h-12 cursor-pointer border-r p-3 text-black"
-                type="date"
+                // type="date"
                 id="check-out"
-                min={todayDate}
+                onClick={() => setIsClicked(!isClicked)}
                 required
               />
             </div>

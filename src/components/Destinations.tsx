@@ -1,4 +1,4 @@
-import { destinations } from '../items/Destinations'
+import { destinations } from '../items/DestinationsList'
 import { MdFlight, MdFreeBreakfast, MdMyLocation } from 'react-icons/md'
 import { useToggleTheme } from '../context/theme-context'
 
@@ -16,7 +16,7 @@ function Destinations() {
       <ul className="grid grid-cols-3 justify-items-center gap-y-10">
         {destinations.map((destination, index) => (
           <li
-            className="destination-container rounded-lg bg-purple-50 py-4 px-5"
+            className="destinations-container rounded-lg bg-purple-50 py-4 px-5"
             style={{
               transition: '0.3s ease-in-out',
             }}

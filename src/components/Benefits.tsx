@@ -1,6 +1,6 @@
 import { benefits } from '../items/BenefitsList'
 
-function About() {
+function Benefits() {
   return (
     <section className="mt-6 text-white">
       <ul className="flex justify-evenly">
@@ -24,4 +24,4 @@ function About() {
   )
 }
 
-export default About
+export default Benefits

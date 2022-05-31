@@ -4,7 +4,7 @@ import ThemeToggle from './Themetoggle'
 
 function Nav() {
   return (
-    <nav className="flex items-center justify-between bg-teal-200 p-4 text-lg">
+    <nav className="flex items-center justify-between p-4 text-lg">
       <div className="flex">
         <GiCommercialAirplane className="text-3xl text-blue-400" />
         <h3 className="font-semibold text-blue-400">SkyTravel</h3>

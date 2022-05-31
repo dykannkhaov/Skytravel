@@ -5,7 +5,7 @@ function Reviews() {
   const { darkTheme } = useToggleTheme()
 
   return (
-    <section>
+    <section id="review">
       <div>
         <h3 className={`mt-3 mb-8 text-center text-xl font-bold ${darkTheme ? 'text-white' : 'text-black'}`}>
           Reviews from our customers

@@ -2,7 +2,7 @@ import { destinations } from '../items/DestinationsList'
 import { MdFlight, MdFreeBreakfast, MdMyLocation } from 'react-icons/md'
 import { useToggleTheme } from '../context/theme-context'
 
-function Destinations() {
+function Recommandations() {
   const { darkTheme } = useToggleTheme()
 
   return (
@@ -48,4 +48,4 @@ function Destinations() {
   )
 }
 
-export default Destinations
+export default Recommandations

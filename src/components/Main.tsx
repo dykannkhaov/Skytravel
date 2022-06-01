@@ -1,6 +1,6 @@
 import Form from './Form'
 import Benefits from './Benefits'
-import Destinations from './Destinations'
+import Recommendations from './Recommendations'
 import Reviews from './Reviews'
 
 function Main() {
@@ -9,7 +9,7 @@ function Main() {
       <main>
         <Form />
         <Benefits />
-        <Destinations />
+        <Recommendations />
         <Reviews />
       </main>
     </>

@@ -15,3 +15,9 @@
   transform: translateX(0.4rem) translateY(-1rem);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.btn-guests--disabled:disabled {
+  background-color: #323638;
+  border: 1px solid #2a3b48;
+  color: white;
+}

@@ -6,8 +6,8 @@ function Recommandations() {
   const { darkTheme } = useToggleTheme()
 
   return (
-    <section className="text-white">
-      <div className="mb-8" id="destination">
+    <section className="text-white" id="destination">
+      <div className="mb-8">
         <h3 className={`mt-3 text-center text-xl font-bold ${darkTheme ? 'text-white' : 'text-black'}`}>
           Recommended Destinations
         </h3>

@@ -1,32 +1,29 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import TravelDates from './TravelDates'
 import Guests from './Guests'
 import Itineraries from './Itineraries'
 
 function Form() {
-  const [isReset, setIsReset] = useState(false)
+  const [departure, setDeparture] = useState<string>('')
+  const [arrival, setArrival] = useState<string>('')
 
   const [numbersOfGuests, setNumbersOfGuests] = useState(1)
   const [flightClass, setFlightClass] = useState<'Economy' | 'Business'>('Economy')
 
-  const [departure, setDeparture] = useState<string>('')
-  const [arrival, setArrival] = useState<string>('')
-
   const [travelDates, setTravelDates] = useState<[Date, Date] | undefined>(undefined)
 
-  useEffect(() => {
+  const resetForm = () => {
     setNumbersOfGuests(1)
     setFlightClass('Economy')
     setDeparture('')
     setArrival('')
     setTravelDates(undefined)
-    setIsReset(false)
-  }, [isReset])
+  }
 
   return (
     <section className="main-img--container flex flex-col items-center justify-center rounded-md">
       <p className="text-4xl font-bold tracking-widest text-white">Wherever you are, travel with us!</p>
-      <form className="z-40 rounded-lg bg-sky-900 p-3" id="issou">
+      <form className="z-40 rounded-lg bg-sky-900 p-3" onSubmit={(e) => e.preventDefault()}>
         <div>
           <input className="mr-1 cursor-pointer" type="radio" name="ticket" id="return" defaultChecked />
           <label className="mr-3 cursor-pointer text-white" htmlFor="return">
@@ -51,7 +48,7 @@ function Form() {
 
         <div className="mt-4 flex justify-end">
           <button
-            onClick={() => setIsReset(true)}
+            onClick={resetForm}
             className="cursor-pointer rounded-lg bg-orange-500 p-3 font-semibold text-white hover:bg-orange-600"
             type="reset"
           >

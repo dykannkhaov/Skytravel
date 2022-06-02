@@ -1,13 +1,12 @@
-// /* eslint-disable jsx-a11y/anchor-is-valid */
 import { GiCommercialAirplane } from 'react-icons/gi'
-import ThemeToggle from './Themetoggle'
+import ToggleTheme from './ToggleTheme'
 
 function Nav() {
   return (
-    <nav className="flex items-center justify-between p-4 text-lg">
+    <nav className="flex items-center justify-between p-4 text-lg ">
       <div className="flex">
-        <GiCommercialAirplane className="text-3xl text-blue-400" />
-        <h3 className="font-semibold text-blue-400">SkyTravel</h3>
+        <GiCommercialAirplane className="text-3xl text-sky-600" />
+        <h3 className="font-semibold text-sky-600">SkyTravel</h3>
       </div>
       <ul className="flex pr-10 font-semibold text-blue-500">
         <li className="hover:text-blue-700">
@@ -20,7 +19,7 @@ function Nav() {
           <a href="#review">Reviews</a>
         </li>
       </ul>
-      <ThemeToggle />
+      <ToggleTheme />
     </nav>
   )
 }

@@ -1,8 +1,7 @@
-import * as React from 'react'
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs'
 import { useToggleTheme } from '../context/theme-context'
 
-function ThemeToggle() {
+function ToggleTheme() {
   const { darkTheme, toggleTheme } = useToggleTheme()
 
   return (
@@ -14,4 +13,4 @@ function ThemeToggle() {
   )
 }
 
-export default ThemeToggle
+export default ToggleTheme

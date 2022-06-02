@@ -29,14 +29,7 @@ function Guests({ numbersOfGuests, setNumbersOfGuests, flightClass, setFlightCla
             {numbersOfGuests > 9 ? '9' : numbersOfGuests} {numbersOfGuests > 1 ? 'travelers' : 'adult'}, {flightClass}
           </button>
           {isGuestsMenuOpen && (
-            <div
-              ref={ref}
-              className="absolute"
-              style={{
-                backgroundColor: '#181a1b',
-                color: '#a49d91',
-              }}
-            >
+            <div ref={ref} className="absolute bg-[#181a1b] text-[#a49d91]">
               <div className="p-4">
                 <h5 className="mb-4 text-xs">Cabin Class</h5>
                 <button

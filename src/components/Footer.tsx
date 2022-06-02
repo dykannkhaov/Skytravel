@@ -1,9 +1,12 @@
-import * as React from 'react'
+import { useToggleTheme } from 'src/context/theme-context'
 import { BsGithub, BsTwitter, BsLinkedin } from 'react-icons/bs'
 
 function Footer() {
+  const { darkTheme } = useToggleTheme()
   return (
-    <footer className="mt-4 flex justify-evenly bg-purple-300 py-6">
+    <footer
+      className={`mt-4 flex justify-evenly py-6 ${darkTheme ? 'bg-[#212425] text-white' : 'bg-purple-300 text-black'} `}
+    >
       <span>
         <span>Copyright &copy; 2022 Travelo. All rights reserved</span>
       </span>

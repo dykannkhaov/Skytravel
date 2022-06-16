@@ -12,12 +12,12 @@ function Form() {
 
   const [travelDates, setTravelDates] = useState<[Date, Date] | undefined>(undefined)
 
-  const resetForm = () => {
-    setNumbersOfGuests(1)
-    setFlightClass('Economy')
-    setDeparture('')
-    setArrival('')
-    setTravelDates(undefined)
+  const validateForm = () => {
+    if (departure !== '' && arrival !== '' && travelDates !== undefined) {
+      setDeparture('')
+      setArrival('')
+      setTravelDates(undefined)
+    } else return
   }
 
   return (
@@ -48,15 +48,9 @@ function Form() {
 
         <div className="mt-4 flex justify-end">
           <button
-            onClick={resetForm}
-            className="cursor-pointer rounded-lg bg-orange-500 p-3 font-semibold text-white hover:bg-orange-600"
-            type="reset"
-          >
-            Reset
-          </button>
-          <button
+            type="button"
+            onClick={validateForm}
             className="ml-2 rounded-lg bg-green-500 p-3 font-semibold text-white hover:bg-green-700"
-            type="submit"
           >
             Search flights
           </button>

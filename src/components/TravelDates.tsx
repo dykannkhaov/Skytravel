@@ -17,6 +17,7 @@ function TravelDates({ travelDates, setTravelDates }: TravelDatesProps) {
     setIsCalendarVisible(true)
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleOnChange: OnChangeDateRangeCallback = (value: any) => {
     setTravelDates(value)
   }
@@ -26,6 +27,7 @@ function TravelDates({ travelDates, setTravelDates }: TravelDatesProps) {
   }, [travelDates])
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleClickOutside = (event: any) => {
       if (ref.current && !ref.current.contains(event.target)) setIsCalendarVisible(false)
     }

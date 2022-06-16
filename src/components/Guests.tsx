@@ -6,6 +6,7 @@ function Guests({ numbersOfGuests, setNumbersOfGuests, flightClass, setFlightCla
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleClickOutside = (event: any) => {
       if (ref.current && !ref.current.contains(event.target)) setIsGuestsMenuOpen(false)
     }
